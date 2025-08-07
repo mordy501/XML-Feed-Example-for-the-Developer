@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<reviews xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.google.com/shopping/reviews/schema/product/2.3/product_reviews.xsd">
+    
+    <!-- 
+    Publisher Information (Your Store ) 
+    This section identifies the store that collected the reviews.
+    -->
+    <publisher>
+        <name>Your Store Name Here</name>
+        <favicon>https://www.your-store-domain.com/favicon.ico</favicon>
+    </publisher>
+
+    <!-- 
+    Main container for all reviews.
+    -->
+    <reviews>
+
+        <!-- ======================================= -->
+        <!--      Example for the First Review       -->
+        <!-- ======================================= -->
+        <review>
+            <!-- A unique and persistent ID for the review. Very important. -->
+            <review_id>REVIEW_UNIQUE_ID_1</review_id>
+
+            <!-- A direct, clickable URL to this specific review's landing page. Required. -->
+            <review_url type="singleton">https://your-app-or-store.com/reviews/REVIEW_UNIQUE_ID_1</review_url>
+
+            <!-- The exact date and time the review was created, in ISO 8601 format. Highly recommended. -->
+            <review_timestamp>2025-08-07T10:00:00Z</review_timestamp>
+
+            <!-- The title of the review. Required. -->
+            <title type="text">Title of the First Review</title>
+            
+            <!-- The full content of the review. Required. -->
+            <content type="text">This product is excellent and the quality is very high.</content>
+
+            <!-- Information about the reviewer. Required. -->
+            <reviewer>
+                <name>Ahmed</name>
+            </reviewer>
+
+            <!-- The star rating. Required, and must be in the correct format with min/max. -->
+            <ratings>
+                <overall min="1" max="5">5</overall>
+            </ratings>
+
+            <!-- Section for the product associated with the review. Required. -->
+            <products>
+                <product>
+                    <!-- The URL of the actual product page on your store. Required and critical for matching. -->
+                    <product_url>https://www.your-store-domain.com/products/product-a</product_url>
+                    
+                    <!-- The name of the product. -->
+                    <product_name>First Product Name</product_name>
+                    
+                    <!-- Product identifiers. Critical for matching. -->
+                    <product_ids>
+                        <!-- Provide all available identifiers. If GTIN/MPN are not available, the entire tag block for them should be omitted. -->
+                        <gtins>
+                            <gtin>1234567890123</gtin>
+                        </gtins>
+                        <mpns>
+                            <mpn>MFG123</mpn>
+                        </mpns>
+                        <!-- SKU is practically mandatory. Use your internal product ID. -->
+                        <skus>
+                            <sku>SKU-PROD-A</sku>
+                        </skus>
+                        <!-- Brand is also practically mandatory. -->
+                        <brands>
+                            <brand>Brand Name</brand>
+                        </brands>
+                    </product_ids>
+                </product>
+            </products>
+        </review>
+        <!-- End of the first review -->
+
+        <!-- ================================================================= -->
+        <!-- Example for a Second Review (for a product without GTIN/MPN )      -->
+        <!-- ================================================================= -->
+        <review>
+            <review_id>REVIEW_UNIQUE_ID_2</review_id>
+            <review_url type="singleton">https://your-app-or-store.com/reviews/REVIEW_UNIQUE_ID_2</review_url>
+            <review_timestamp>2025-08-06T15:30:00Z</review_timestamp>
+            <title type="text">Good Experience</title>
+            <content type="text">Good product, but the delivery was a bit late.</content>
+            <reviewer>
+                <name>Fatima</name>
+            </reviewer>
+            <ratings>
+                <overall min="1" max="5">4</overall>
+            </ratings>
+            <products>
+                <product>
+                    <product_url>https://www.your-store-domain.com/products/product-b</product_url>
+                    <product_name>Second Product Name</product_name>
+                    <product_ids>
+                        <!-- Note here: No GTIN or MPN tags because they are not available for this product. The code should handle this gracefully. -->
+                        <skus>
+                            <sku>SKU-PROD-B</sku>
+                        </skus>
+                        <brands>
+                            <brand>Another Brand Name</brand>
+                        </brands>
+                    </product_ids>
+                </product>
+            </products>
+        </review>
+        <!-- End of the second review -->
+
+    </reviews>
+</reviews>
